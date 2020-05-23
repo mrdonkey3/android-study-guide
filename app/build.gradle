@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.dk.androidstudyguide"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions "company", "product"//维度
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {//因为与buildTypes共存时相互组合的结果
+        company {
+            dimension "company"
+        }
+        v1 {
+            dimension "product"
+            applicationId "com.dk.androidguide.red"
+
+        }
+        v2 {
+            dimension "product"
+            applicationId "com.dk.androidguide.blue"
+        }
+    }
+
+}
+
+
+//configurations {
+//    redImplementation
+//    blueImplementation
+//}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':common')
+//    redImplementation project(path: ':common', configuration: 'redDebug')
+//    redImplementation project(path: ':common', configuration: 'redReleas')
+//    blueImplementation project(path: ':common', configuration: 'blueDebug')
+//    blueImplementation project(path: ':common', configuration: 'blueReleas')
+
+}

@@ -1,0 +1,79 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions "gradleguide"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        gradleguide {
+            dimension "gradleguide"
+        }
+    }
+
+}
+
+configurations {
+//    commonaDebugImplementation
+//    commonbDebugImplementation
+//    commonaReleaseImplementation
+//    commonbReleaseImplementation
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    def currentFlavor = getCurrentFlavor()
+    println "---> currentFlavor = $currentFlavor"
+    if ("mi".equalsIgnoreCase(currentFlavor)) {
+        // implementation 1版本库
+//        commonaDebugImplementation project(path: ':common', configuration: 'commonaDebug')
+//        commonaReleaseImplementation project(path: ':common', configuration: 'commonaRelease')
+
+    } else {
+        //  implementation 2版本库
+//        commonbDebugImplementation project(path: ':common', configuration: ' commonbDebug')
+//        commonbReleaseImplementation project(path: ':common', configuration: 'commonbRelease')
+    }
+}
+
+// 取出当前选择的渠道名
+def getCurrentFlavor() {
+    Gradle gradle = getGradle()
+    String taskStr = gradle.getStartParameter().getTaskRequests().toString()
+    println("taskStr:" + taskStr)
+    Pattern pattern
+    if (taskStr.contains("assemble")) {
+        pattern = Pattern.compile("assemble(\\w+)(Release|Debug)")
+    } else {
+        pattern = Pattern.compile("generate(\\w+)(Release|Debug)")
+    }
+    Matcher matcher = pattern.matcher(taskStr)
+    if (matcher.find()) {
+        return matcher.group(1)
+    }
+    return ""
+}
