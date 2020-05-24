@@ -1,0 +1,40 @@
+def dep = rootProject.ext.dependencies
+def version = rootProject.ext.android
+def flavors = rootProject.ext.productFlavors
+def module = rootProject.ext.module
+
+if (module.android_art_is_module) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+apply from: '../config/android.gradle'
+
+android {
+
+    defaultConfig {
+//        applicationId "$version.applicationId"
+    }
+    /**
+     * 通过修改SourceSets中的属性，可以指定哪些源文件（或文件夹下的源文件）要被编译，哪些源文件要被排除
+     */
+    sourceSets {
+        main {
+            if (module.android_art_is_module) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java{
+                    //排除以下文件所有
+                    exclude '*module'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':common')
+}

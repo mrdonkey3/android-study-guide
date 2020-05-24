@@ -1,4 +1,5 @@
-rootProject.name='androidstudyguide'
+rootProject.name='android-study-guide'
 include ':app'
 include ':gradleguide'
 include ':common'
+include ':android-art'
