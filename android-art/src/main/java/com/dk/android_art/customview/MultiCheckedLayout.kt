@@ -31,7 +31,7 @@ class MultiCheckedLayout(ctx: Context, attrs: AttributeSet) : ConstraintLayout(c
     private val checkedCount = 2//最多选中数
     private val rows = 3//几行
     private val columns = 5//几列
-    private val rootId: Int by lazy { View.generateViewId() }//rootId
+    private val rootId: Int by lazy { id }//rootId ，这个id是通过布局设置的
     private val childContainer: LinkedHashMap<Int, AppCompatTextView> by lazy {//维持当前容器中的view
         val container = LinkedHashMap<Int, AppCompatTextView>(childViewCount)
         repeat(childViewCount) { i ->
