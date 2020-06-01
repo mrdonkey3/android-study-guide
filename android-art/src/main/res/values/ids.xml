@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="clRoot" type="id" />
+    <item name="cTv1" type="id" />
+    <item name="cTv2" type="id" />
+    <item name="cTv3" type="id" />
+</resources>
