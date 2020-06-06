@@ -20,6 +20,7 @@ android {
         flavorDimensions "$flavors.company", "$flavors.product"//维度
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
+        vectorDrawables.useSupportLibrary true
     }
 
     buildTypes {

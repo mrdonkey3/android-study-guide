@@ -2,4 +2,19 @@
 <resources>
     <string name="str">normal</string>
     <string name="module_name">android-art</string>
+    <string name="number_over_range">数字不在范围内！</string>
+
+    <string name="personView">dialogFragment</string>
+    <string name="dialogFragment">dialogFragment</string>
+    <string name="checkedView">checkedView</string>
+
+    <string name="animator_curve">曲线</string>
+    <string name="animator_period">周期</string>
+    <string name="animator_rotate">旋转</string>
+    <string name="animator_swing">摆荡</string>
+    <string name="animator_transition">过渡</string>
+    <string name="animator_color">颜色</string>
+    <string name="animator_scale">缩放</string>
+    <string name="animator_pic">图片</string>
+    <string name="animator_complex">复杂</string>
 </resources>

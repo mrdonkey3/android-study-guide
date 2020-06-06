@@ -1,7 +1,5 @@
-package com.dk.android_art.utils
+package com.dk.common.utils
 
-import android.graphics.PointF
-import android.view.View
 import java.lang.reflect.Method
 
 /**
