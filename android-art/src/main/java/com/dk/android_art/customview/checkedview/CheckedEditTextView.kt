@@ -6,6 +6,7 @@ import android.text.InputFilter
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.dk.android_art.R
 import com.dk.android_art.customview.checkedview.InputFilterMinMax
@@ -48,11 +49,34 @@ class CheckedEditTextView(ctx: Context, attrs: AttributeSet?) : ConstraintLayout
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 println("-------onTextChanged--($s)-------")
+                MotionEvent.ACTION_DOWN
             }
-
         })
+//        et_number.isEnabled=false
+        et_number.setOnTouchListener { v, event ->
+            println("-------setOnTouchListener------${event.action}")
+            if (event.action.and(MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
+                cb_check.setChecked(!cb_check.isChecked,true)
+            }
+            true
+        }
+
     }
 
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        println("-------onTouchEvent------${event.action}")
+        return super.onTouchEvent(event)
+    }
+
+    override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
+        println("-------onInterceptTouchEvent------${ev.action}")
+        return super.onInterceptTouchEvent(ev)
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
+        println("-------dispatchTouchEvent------${ev.action}")
+        return super.dispatchTouchEvent(ev)
+    }
 
     /**
      * 获取布局id

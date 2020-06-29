@@ -51,8 +51,43 @@
                 android:text="@string/dialogFragment"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_check_view" />
+                app:layout_constraintTop_toBottomOf="@id/btn_check_view" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_second_activity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/secondActivity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_dialog" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_aidl_client_activity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/aidlClientActivity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_second_activity" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_aidl_binder_pool_activity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/aidlBinderPoolActivity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_socket_tcp_client_activity" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_socket_tcp_client_activity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/socketTcpClientActivity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_aidl_client_activity" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

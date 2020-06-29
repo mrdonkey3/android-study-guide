@@ -4,9 +4,13 @@
     <string name="module_name">android-art</string>
     <string name="number_over_range">数字不在范围内！</string>
 
-    <string name="personView">dialogFragment</string>
+    <string name="personView">personView</string>
     <string name="dialogFragment">dialogFragment</string>
     <string name="checkedView">checkedView</string>
+    <string name="secondActivity">secondActivity</string>
+    <string name="aidlClientActivity">aidlClientActivity</string>
+    <string name="aidlBinderPoolActivity">aidlBinderPoolActivity</string>
+    <string name="socketTcpClientActivity">socketTcpClientActivity</string>
 
     <string name="animator_curve">曲线</string>
     <string name="animator_period">周期</string>

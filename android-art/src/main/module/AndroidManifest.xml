@@ -1,22 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dk.android_art">
+    <!-- 自定义permission -->
+    <permission
+        android:name="com.dk.android_art.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.dk.android_art.PROVIDER"
+        android:protectionLevel="normal" /> <!-- 使用自定义permission -->
+    <uses-permission android:name="com.dk.android_art.ACCESS_BOOK_SERVICE" />
+    <uses-permission android:name="com.dk.android_art.PROVIDER" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- socket -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/module_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.CheckedViewActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.TCPClientActivity" />
+        <activity
+            android:name=".activities.SecondActivity"
+            android:process="com.dk.android_art.process2">
+            <intent-filter>
+                <action android:name="com.dk.android_art.action1" />
+                <action android:name="com.dk.android_art.action2" />
+
+                <category android:name="com.dk.android_art.category" />
+                <category android:name="android.intent.category.DEFAULT" /> <!-- 必须有这个defaultf否则无法隐式启动 -->
+                <data
+                    android:host="xxx"
+                    android:mimeType="text/plain"
+                    android:scheme="content" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:launchMode="singleTask"> <!-- 不想让activity重新创建的系统配置选项 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.AidlBinderPoolActivity"
+            android:process=":client" />
+        <activity
+            android:name=".activities.AidlBookClientActivity"
+            android:process=":client" />
+
+        <service
+            android:name=".service.AidlBookService"
+            android:exported="true"
+            android:process=":service">
+            <intent-filter>
+                <action android:name="com.dk.android_art.service" />
+            </intent-filter>
+        </service>
+        <service android:name=".service.BinderPoolService"
+            android:process=":binderPoolService"/>
+        <service
+            android:name=".service.TCPServerService"
+            android:process=":tcpServer" />
+
+        <provider
+            android:name=".contentprovider.BookContentProvider"
+            android:authorities="com.dk.android_art.book.provider"
+            android:permission="com.dk.android_art.PROVIDER"
+            android:process=":provider" />
     </application>
 
 </manifest>
