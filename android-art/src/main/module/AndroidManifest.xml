@@ -42,6 +42,7 @@
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation"
+            android:windowSoftInputMode="adjustPan"
             android:launchMode="singleTask"> <!-- 不想让activity重新创建的系统配置选项 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
