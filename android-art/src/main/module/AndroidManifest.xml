@@ -22,6 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.ViewEventPolicyActivity"></activity>
         <activity android:name=".activities.TCPClientActivity" />
         <activity
             android:name=".activities.SecondActivity"
@@ -42,8 +43,8 @@
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation"
-            android:windowSoftInputMode="adjustPan"
-            android:launchMode="singleTask"> <!-- 不想让activity重新创建的系统配置选项 -->
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan"> <!-- 不想让activity重新创建的系统配置选项 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,8 +66,9 @@
                 <action android:name="com.dk.android_art.service" />
             </intent-filter>
         </service>
-        <service android:name=".service.BinderPoolService"
-            android:process=":binderPoolService"/>
+        <service
+            android:name=".service.BinderPoolService"
+            android:process=":binderPoolService" />
         <service
             android:name=".service.TCPServerService"
             android:process=":tcpServer" />

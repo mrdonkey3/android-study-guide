@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dk.android_art.activities.AidlBinderPoolActivity
 import com.dk.android_art.activities.AidlBookClientActivity
 import com.dk.android_art.activities.TCPClientActivity
+import com.dk.android_art.activities.ViewEventPolicyActivity
 import com.dk.android_art.frags.CheckedViewFragment
 import com.dk.android_art.frags.DialogFragment
 import com.dk.android_art.frags.PersonViewFragment
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_aidl_client_activity?.setOnClickListener(this)
         btn_aidl_binder_pool_activity?.setOnClickListener(this)
         btn_socket_tcp_client_activity?.setOnClickListener(this)
+        btn_view_event_policy?.setOnClickListener(this)
     }
 
     override fun onResume() {
@@ -74,6 +76,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_socket_tcp_client_activity->{
                 startActivity(Intent(this, TCPClientActivity::class.java))
+            }
+            R.id.btn_view_event_policy->{
+                startActivity(Intent(this, ViewEventPolicyActivity::class.java))
             }
 
             else -> {
