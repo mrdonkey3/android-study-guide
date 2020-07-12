@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import com.dk.android_art.R
+import com.dk.android_art.utils.ViewUtils
+import com.dk.android_art.utils.ViewUtils.Companion.isTouchPointInView
 import com.dk.common.utils.ReflectUtils
 import com.teligen.litedevice.ui.widget.CheckedView
 import com.teligen.litedevice.ui.widget.CheckedViewFactory
@@ -194,7 +196,8 @@ class MultiCheckedLayout(ctx: Context, attrs: AttributeSet) : ConstraintLayout(c
      */
     private fun handle(ev: MotionEvent): Boolean {
         childContainer.values.forEach { v ->
-            if (v.pointInView(ev.getX(ev.actionIndex), ev.getY(ev.actionIndex))) {//点击的是子View
+            if (isTouchPointInView(v as CheckedTextView,ev.rawX, ev.rawY)) {//点击的是子View
+//            if (v.pointInView(ev.getX(ev.actionIndex), ev.getY(ev.actionIndex))) {//点击的是子View
                 val viewState = v.checkedViewState
                 handleAction(v.getViewId(), viewState)
             }

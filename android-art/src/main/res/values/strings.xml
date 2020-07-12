@@ -12,6 +12,7 @@
     <string name="aidlBinderPoolActivity">aidlBinderPoolActivity</string>
     <string name="socketTcpClientActivity">socketTcpClientActivity</string>
     <string name="viewEventPolicyActivity">viewEventPolicyActivity</string>
+    <string name="customViewActivity">customViewActivity</string>
 
     <string name="animator_curve">曲线</string>
     <string name="animator_period">周期</string>

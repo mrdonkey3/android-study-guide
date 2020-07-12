@@ -6,6 +6,7 @@ import android.os.*
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.view.ViewRootImpl
 import com.dk.android_art.R
 import com.dk.android_art.aidl.Book
 import com.dk.android_art.aidl.IBookManager
@@ -64,7 +65,6 @@ class AidlBookClientActivity : AppCompatActivity(), View.OnClickListener {
             mBookManager = null
             //todo 重新绑定远程service
         }
-
     }
 
     private val mHandler = object : Handler() {
