@@ -108,6 +108,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_view_event_policy" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_notify"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/notify"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_custom_view" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_simulate_notification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/simulate_notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_custom_view" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_alipay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/alipay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_simulate_notification" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

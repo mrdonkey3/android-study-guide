@@ -175,14 +175,14 @@ class MultiCheckedLayout(ctx: Context, attrs: AttributeSet) : ConstraintLayout(c
     }
 
     override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
-        when (ev.action.and(MotionEvent.ACTION_MASK)) {
-            MotionEvent.ACTION_DOWN -> {
-                return handle(ev)
-            }
-            MotionEvent.ACTION_POINTER_DOWN -> {
-                return handle(ev)
-            }
-        }
+//        when (ev.action.and(MotionEvent.ACTION_MASK)) {
+//            MotionEvent.ACTION_DOWN -> {
+//                return handle(ev)
+//            }
+//            MotionEvent.ACTION_POINTER_DOWN -> {
+//                return handle(ev)
+//            }
+//        }
         return super.onInterceptTouchEvent(ev)
     }
 

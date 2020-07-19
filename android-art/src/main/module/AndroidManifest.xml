@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.CustomViewActivity"></activity>
+        <activity android:name=".activities.SimulateNotificationActivity" android:process=":simulateNotification"/>
+        <activity android:name=".activities.CustomViewActivity" />
         <activity android:name=".activities.ViewEventPolicyActivity" />
         <activity android:name=".activities.TCPClientActivity" />
         <activity
@@ -45,7 +46,7 @@
             android:name=".MainActivity"
             android:configChanges="orientation"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan"> <!-- 不想让activity重新创建的系统配置选项 -->
+            android:windowSoftInputMode="adjustPan"> <!-- configChanges 不想让activity重新创建的系统配置选项 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -79,6 +80,17 @@
             android:authorities="com.dk.android_art.book.provider"
             android:permission="com.dk.android_art.PROVIDER"
             android:process=":provider" />
+
+        <receiver android:name=".appwidget.MyAppWidgetProvider">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_info" />
+
+            <intent-filter>
+                <action android:name="com.dk.android_art.action_CLICK" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
