@@ -22,7 +22,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SimulateNotificationActivity" android:process=":simulateNotification"/>
+        <activity android:name=".activities.AnimationActivity"></activity>
+        <activity
+            android:name=".activities.SimulateNotificationActivity"
+            android:process=":simulateNotification" />
         <activity android:name=".activities.CustomViewActivity" />
         <activity android:name=".activities.ViewEventPolicyActivity" />
         <activity android:name=".activities.TCPClientActivity" />
@@ -79,8 +82,7 @@
             android:name=".contentprovider.BookContentProvider"
             android:authorities="com.dk.android_art.book.provider"
             android:permission="com.dk.android_art.PROVIDER"
-            android:process=":provider" />
-
+            android:process=":provider" /> <!-- 注册小部件 -->
         <receiver android:name=".appwidget.MyAppWidgetProvider">
             <meta-data
                 android:name="android.appwidget.provider"

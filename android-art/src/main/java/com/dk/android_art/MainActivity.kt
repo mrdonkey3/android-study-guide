@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_notify?.setOnClickListener(this)
         btn_simulate_notification?.setOnClickListener(this)
         btn_alipay?.setOnClickListener(this)
+        btn_animation?.setOnClickListener(this)
     }
 
     override fun onResume() {
@@ -113,6 +114,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_alipay -> {
                 SystemUtils.startAliPay(this)
+            }
+            R.id.btn_animation -> {
+                startActivity(Intent(this, AnimationActivity::class.java))
             }
             else -> {
                 return

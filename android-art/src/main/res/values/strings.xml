@@ -16,6 +16,7 @@
     <string name="notify">notify</string>
     <string name="simulate_notification">simulate_notify</string>
     <string name="alipay">alipay</string>
+    <string name="animation">animation</string>
 
     <string name="animator_curve">曲线</string>
     <string name="animator_period">周期</string>

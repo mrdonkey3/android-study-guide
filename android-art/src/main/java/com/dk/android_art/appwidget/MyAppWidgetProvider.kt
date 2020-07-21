@@ -1,6 +1,7 @@
 package com.dk.android_art.appwidget
 
 import android.app.PendingIntent
+import android.appwidget.AppWidgetHostView
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
@@ -54,6 +55,7 @@ class MyAppWidgetProvider : AppWidgetProvider() {
                         val pendingIntent = PendingIntent.getBroadcast(context, 0, intentClick, 0)
                         remoteViews.setOnClickPendingIntent(R.id.iv_widget, pendingIntent)
                         //更新小部件
+//                        AppWidgetHostView
                         awManager.updateAppWidget(
                             ComponentName(
                                 context,

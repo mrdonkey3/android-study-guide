@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AnimationActivity">
+
+    <ImageView
+        android:id="@+id/iv_view_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_view_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view动画"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_view_animation"
+        app:layout_constraintStart_toEndOf="@+id/iv_view_animation" />
+
+    <ImageView
+        android:id="@+id/iv_frame_animator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        app:layout_constraintStart_toStartOf="@+id/iv_view_animation"
+        app:layout_constraintTop_toBottomOf="@+id/iv_view_animation" />
+
+    <TextView
+        android:id="@+id/tv_frame_animator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="帧动画"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_frame_animator"
+        app:layout_constraintStart_toEndOf="@+id/iv_frame_animator" />
+
+
+    <ImageView
+        android:id="@+id/iv_property_animator"
+        android:layout_width="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        app:layout_constraintStart_toStartOf="@+id/iv_frame_animator"
+        app:layout_constraintTop_toBottomOf="@+id/iv_frame_animator" />
+
+    <TextView
+        android:id="@+id/tv_property_animator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="属性动画"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_property_animator"
+        app:layout_constraintStart_toEndOf="@+id/iv_property_animator" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,7 +50,7 @@ class BinderPool {
         mContext.bindService(service, mBinderPoolConnection, Context.BIND_AUTO_CREATE)
         kotlin.runCatching {
             Log.e(TAG,"--->connectBinderPoolService ${Thread.currentThread()}")
-            mConnectBinderPoolCountDownLatch.await()//阻塞 当前线程，直至连接上，（达到异步转同步的效果）
+            mConnectBinderPoolCountDownLatch.await()//阻塞 当前线程(因为创建对象的时候在子线程)，直至连接上，（达到异步转同步的效果）
         }
     }
 
@@ -76,7 +76,8 @@ class BinderPool {
 
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
             Log.e(TAG,"--->onServiceConnected ${Thread.currentThread()}")
-            mBinderPool = IBinderPool.Stub.asInterface(service)
+            mBinderPool = IBinderPool.Stub.asInterface(service)//在service中创建binderPoolImp连接时返回
+            // （此时已经是代理的对象（可进行进程间的访问））
             kotlin.runCatching {
                 //设置死亡代理
                 mBinderPool?.asBinder()?.linkToDeath(mBinderPoolDeathRecipient, 0)
@@ -100,6 +101,9 @@ class BinderPool {
     }
 
 
+    /**
+     *
+     */
     class BinderPoolImpl : IBinderPool.Stub() {
         override fun queryBinder(binderCode: Int): IBinder? {
             return when (binderCode) {
