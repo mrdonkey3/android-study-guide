@@ -1,5 +1,7 @@
 package com.dk.android_art
 
+import android.app.ActivityManagerNative
+import android.app.ActivityThread
 import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -7,9 +9,13 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Process
 import android.os.SystemClock
+import android.providers.settings.GlobalSettingsProto
 import android.view.View
+import android.view.WindowManager
 import android.widget.RemoteViews
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityManagerCompat
+import com.android.server.am.ActivityManagerServiceProto
 import com.dk.android_art.activities.*
 import com.dk.android_art.frags.CheckedViewFragment
 import com.dk.android_art.frags.DialogFragment
@@ -41,6 +47,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_simulate_notification?.setOnClickListener(this)
         btn_alipay?.setOnClickListener(this)
         btn_animation?.setOnClickListener(this)
+        btn_window_activity?.setOnClickListener(this)
     }
 
     override fun onResume() {
@@ -117,6 +124,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_animation -> {
                 startActivity(Intent(this, AnimationActivity::class.java))
+            }
+            R.id.btn_window_activity -> {
+                startActivity(Intent(this, WindowActivity::class.java))
             }
             else -> {
                 return

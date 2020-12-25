@@ -23,7 +23,6 @@ class SimulateNotificationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_simulate_notification)
         initView()
     }
-
     private var needUpdateViews: View? = null
 
 

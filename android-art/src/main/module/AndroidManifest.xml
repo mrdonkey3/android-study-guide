@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- socket -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />    <!-- 为系统类型的window添加权限-->
+
 
     <application
         android:name=".MyApplication"
@@ -22,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.AnimationActivity"></activity>
+        <activity android:name=".activities.WindowActivity"></activity>
+        <activity android:name=".activities.AnimationActivity" />
         <activity
             android:name=".activities.SimulateNotificationActivity"
             android:process=":simulateNotification" />

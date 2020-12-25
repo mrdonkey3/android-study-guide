@@ -55,6 +55,7 @@ dependencies {
     api dep.appcompat
     api dep.constraintlayout
     api dep.core_ktx
+    implementation 'com.google.android.material:material:1.2.0'
     testImplementation dep.junit
     androidTestImplementation dep.androidx_junit
     androidTestImplementation dep.espresso_core

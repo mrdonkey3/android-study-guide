@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply from: '../config/android.gradle'
+apply plugin: 'kotlin-android'
 
 def dep = rootProject.ext.dependencies
 def version = rootProject.ext.android
@@ -15,5 +16,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':common')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 }

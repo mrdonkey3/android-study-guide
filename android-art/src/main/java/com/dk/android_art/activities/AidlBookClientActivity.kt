@@ -13,6 +13,7 @@ import com.dk.android_art.aidl.IBookManager
 import com.dk.android_art.aidl.IOnNewBookArrivedListener
 import com.dk.android_art.entity.User
 import com.dk.android_art.service.AidlBookService
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_aidl_book_client.*
 
 class AidlBookClientActivity : AppCompatActivity(), View.OnClickListener {

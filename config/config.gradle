@@ -20,9 +20,10 @@ ext {
             appcompat       : "1.1.0",
             core_ktx        : "1.2.0",
             constraintlayout: "2.0.0-beta6",//为了使用motionLayout
+            circleImageView : "3.1.0",
             androidxjunit   : "1.1.1",
             espresso_core   : "3.2.0",
-            recyclerview    : "1.1.0"
+            recyclerview    : "1.1.0",
     ]
 
     //是否是测试模式 用于切换组件模式和集成模式 true代表是module false代表是library
@@ -65,6 +66,7 @@ ext {
             androidx_junit  : "androidx.test.ext:junit:${version.androidxjunit}",
             core_ktx        : "androidx.core:core-ktx:${version.core_ktx}",
             constraintlayout: "androidx.constraintlayout:constraintlayout:$version.constraintlayout",
+            circleImageView : "de.hdodenhof:circleimageview:$version.circleImageView",
             espresso_core   : "androidx.test.espresso:espresso-core:${version.espresso_core}",
             junit           : "junit:junit:${version.junit}",
             kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${version.kotlin}",
