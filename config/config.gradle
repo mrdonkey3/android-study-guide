@@ -24,6 +24,7 @@ ext {
             androidxjunit   : "1.1.1",
             espresso_core   : "3.2.0",
             recyclerview    : "1.1.0",
+            material        : "1.2.0"
     ]
 
     //是否是测试模式 用于切换组件模式和集成模式 true代表是module false代表是library
@@ -70,7 +71,8 @@ ext {
             espresso_core   : "androidx.test.espresso:espresso-core:${version.espresso_core}",
             junit           : "junit:junit:${version.junit}",
             kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${version.kotlin}",
-            recyclerview    : "androidx.recyclerview:recyclerview:$version.recyclerview"
+            recyclerview    : "androidx.recyclerview:recyclerview:$version.recyclerview",
+            material        : "com.google.android.material:material:$version.material"
     ]
 
 }

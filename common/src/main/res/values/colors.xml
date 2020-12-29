@@ -3,4 +3,24 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="white">#ffffff</color>
+
+    <color name="green">#4caf50</color>
+    <color name="blue">#2196f3</color>
+    <color name="gray">#888888</color>
+    <color name="red">#f44336</color>
+    <color name="transparent">#00000000</color>
+
+
+    <color name="color_pa">#4caf50</color>
+    <color name="color_ready">#2196f3</color>
+    <color name="color_unready">#888888</color>
+    <color name="color_unsync">#f44336</color>
+
+    <color name="color_mobile">#1296db</color>
+    <color name="color_unicom">#d81e06</color>
+    <color name="color_telecom">#13227a</color>
+    <color name="color_unknow">#888888</color>
+
+
 </resources>

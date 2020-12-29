@@ -55,7 +55,8 @@ dependencies {
     api dep.appcompat
     api dep.constraintlayout
     api dep.core_ktx
-    implementation 'com.google.android.material:material:1.2.0'
+    api dep.material
+    api dep.circleImageView
     testImplementation dep.junit
     androidTestImplementation dep.androidx_junit
     androidTestImplementation dep.espresso_core

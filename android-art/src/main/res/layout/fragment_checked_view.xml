@@ -34,4 +34,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/multi_cl_edit" />
 
+    <com.dk.android_art.customview.displayView.DisplayView
+        android:id="@+id/display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scan">
+
+    </com.dk.android_art.customview.displayView.DisplayView>
+
+    <com.dk.android_art.customview.displayView.DisplayView
+        android:id="@+id/display2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/display"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scan">
+
+    </com.dk.android_art.customview.displayView.DisplayView>
+
+    <com.dk.android_art.customview.displayView.DisplayView
+        android:id="@+id/display3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/display2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scan">
+
+    </com.dk.android_art.customview.displayView.DisplayView>
+
+    <com.dk.android_art.customview.displayView.DisplayView
+        android:id="@+id/display4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/display3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scan">
+
+    </com.dk.android_art.customview.displayView.DisplayView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

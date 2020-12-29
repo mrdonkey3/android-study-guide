@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cst_root"
+    android:layout_width="40dp"
+    android:layout_height="36dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_status"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:src="@color/transparent"
+        app:civ_circle_background_color="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_one"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_mobile"
+        app:civ_border_color="@color/color_mobile"
+        app:civ_border_width="1dp"
+        app:civ_circle_background_color="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VectorDrawableCompat">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_one_status"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:src="@color/transparent"
+        android:visibility="invisible"
+        app:civ_circle_background_color="@color/green"
+        app:layout_constraintEnd_toEndOf="@+id/civ_one"
+        app:layout_constraintStart_toEndOf="@+id/civ_one"
+        app:layout_constraintTop_toTopOf="@+id/civ_one">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_two"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp"
+        android:src="@drawable/ic_unicom"
+        android:visibility="visible"
+        app:civ_border_color="@color/color_unicom"
+        app:civ_border_width="1dp"
+        app:civ_circle_background_color="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/civ_one"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VectorDrawableCompat">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_two_status"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:src="@color/transparent"
+        android:visibility="invisible"
+        app:civ_circle_background_color="@color/green"
+        app:layout_constraintEnd_toEndOf="@+id/civ_two"
+        app:layout_constraintStart_toEndOf="@+id/civ_two"
+        app:layout_constraintTop_toTopOf="@+id/civ_two">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_three"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="6dp"
+        android:src="@drawable/ic_telecom"
+        android:visibility="visible"
+        app:civ_border_color="@color/color_telecom"
+        app:civ_border_width="1dp"
+        app:civ_circle_background_color="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/civ_one"
+        app:layout_constraintTop_toTopOf="@+id/civ_two"
+        tools:ignore="VectorDrawableCompat">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_three_status"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:src="@color/transparent"
+        android:visibility="invisible"
+        app:civ_circle_background_color="@color/green"
+        app:layout_constraintEnd_toEndOf="@+id/civ_three"
+        app:layout_constraintStart_toEndOf="@+id/civ_three"
+        app:layout_constraintTop_toTopOf="@+id/civ_three">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
